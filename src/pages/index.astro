@@ -1,11 +1,22 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import AccountTabs from '../components/AccountTabs';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
-
 <Layout>
-	<Welcome />
+  <header class="inline-bumper">
+    <hgroup class="container">
+      <h1>a11y-kit</h1>
+      <p>Three components built to the WAI-ARIA Authoring Practices, tested with Playwright and axe-core.</p>
+    </hgroup>
+  </header>
+  <main>
+    <section class="inline-bumper">
+      <header class="container">
+        <h2 id="tabs-heading">Tabs</h2>
+      </header>
+      <div class="container">
+        <AccountTabs client:load />
+      </div>
+    </section>
+  </main>
 </Layout>

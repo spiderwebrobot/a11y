@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro build && astro preview",
+    "check": "npx astro check",
     "astro": "astro",
     "generate-types": "wrangler types",
     "deploy": "astro build && wrangler deploy",
@@ -16,10 +17,18 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.3.4",
-    "astro": "^7.3.8"
+    "@astrojs/react": "^7.1.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "astro": "^7.3.8",
+    "normalize.css": "^8.0.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
     "@types/node": "^26.6.5",
+    "typescript": "^6.0.3",
     "wrangler": "^4.149.0"
   }
 }
