@@ -9,7 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro build && astro preview",
-    "check": "npx astro check",
+    "check": "astro check",
     "astro": "astro",
     "generate-types": "wrangler types",
     "deploy": "astro build && wrangler deploy",
