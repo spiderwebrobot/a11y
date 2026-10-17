@@ -77,7 +77,7 @@ const Tabs = ({ label, items, defaultSelectedId }: TabsProps) => {
               aria-selected={selected}
               aria-controls={`${baseId}-panel-${item.id}`}
               tabIndex={selected ? 0 : -1}
-              className={styles.tab}
+              className={`button ${styles.tab}`}
               onClick={() => setSelectedId(item.id)}
               onKeyDown={(event) => onKeyDown(event, index)}
             >
