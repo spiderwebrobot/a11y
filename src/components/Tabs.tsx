@@ -5,6 +5,7 @@ import {
   type KeyboardEvent,
   type ReactNode,
 } from "react";
+
 import styles from "./Tabs.module.css";
 
 export interface TabItem {

@@ -1,5 +1,6 @@
 ---
 import AccountTabs from '../components/AccountTabs';
+import DeleteDialog from '../components/DeleteDialog';
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout>
@@ -10,13 +11,7 @@ import Layout from '../layouts/Layout.astro';
     </hgroup>
   </header>
   <main>
-    <section class="inline-bumper">
-      <header class="container">
-        <h2 id="tabs-heading">Tabs</h2>
-      </header>
-      <div class="container">
-        <AccountTabs client:load />
-      </div>
-    </section>
+    <AccountTabs client:load />
+    <DeleteDialog client:load />
   </main>
 </Layout>

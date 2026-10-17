@@ -11,7 +11,16 @@ const items: TabItem[] = [
  * serialized across the Astro island boundary.
  */
 const AccountTabs = () => {
-  return <Tabs label="Account settings" items={items} />;
+  return (
+    <section className="inline-bumper">
+      <header className="container">
+        <h2 id="tabs-heading">Tabs</h2>
+      </header>
+      <div className="container">
+        <Tabs label="Account settings" items={items} />
+      </div>
+    </section>
+  );
 };
 
 export default AccountTabs;

@@ -1,0 +1,38 @@
+.dialog {
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--fg);
+  max-width: min(28rem, calc(100vw - 2rem));
+}
+
+.dialog::backdrop {
+  background: rgb(0 0 0 / 0.5);
+}
+
+.body {
+  position: relative;
+  padding: 1.5rem;
+}
+
+.title {
+  margin-top: 0;
+  padding-right: 2rem;
+}
+
+.close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.1rem 0.6rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
