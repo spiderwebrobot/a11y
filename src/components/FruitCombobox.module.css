@@ -1,0 +1,51 @@
+.combobox {
+  position: relative;
+  max-width: 20rem;
+}
+
+.combobox label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.combobox input {
+  font: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.listbox {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  margin: 0.25rem 0 0;
+  padding: 0.25rem;
+  list-style: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  max-height: 14rem;
+  overflow-y: auto;
+}
+
+.option {
+  padding: 0.4rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: var(--surface);
+}
+
+.option[aria-selected="true"] {
+  background: var(--accent);
+  color: var(--bg);
+}

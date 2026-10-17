@@ -1,6 +1,7 @@
 ---
 import AccountTabs from '../components/AccountTabs';
 import DeleteDialog from '../components/DeleteDialog';
+import FruitCombobox from '../components/FruitCombobox';
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout>
@@ -13,5 +14,6 @@ import Layout from '../layouts/Layout.astro';
   <main>
     <AccountTabs client:load />
     <DeleteDialog client:load />
+    <FruitCombobox client:load />
   </main>
 </Layout>
