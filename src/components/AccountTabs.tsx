@@ -1,4 +1,5 @@
 import Tabs, { type TabItem } from "./Tabs";
+import styles from "./Tabs.module.css";
 
 const items: TabItem[] = [
   { id: "profile", label: "Profile", content: <p>A profile view</p> },
@@ -17,7 +18,7 @@ const AccountTabs = () => {
         <h2 id="tabs-heading">Tabs</h2>
       </header>
       <div className="container">
-        <Tabs label="Account settings" items={items} />
+        <Tabs label="Account settings" items={items} styles={styles} />
       </div>
     </section>
   );

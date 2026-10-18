@@ -6,8 +6,6 @@ import {
   type ReactNode,
 } from "react";
 
-import styles from "./Tabs.module.css";
-
 export interface TabItem {
   id: string;
   label: string;
@@ -19,6 +17,7 @@ interface TabsProps {
   label: string;
   items: TabItem[];
   defaultSelectedId?: string;
+  styles?: { tabs?: string; tablist?: string; tab?: string; panel?: string };
 }
 
 /**
@@ -30,7 +29,7 @@ interface TabsProps {
  * - The panel is focusable so keyboard users can reach content without
  *   focusable children.
  */
-const Tabs = ({ label, items, defaultSelectedId }: TabsProps) => {
+const Tabs = ({ label, items, defaultSelectedId, styles }: TabsProps) => {
   const baseId = useId();
   const [selectedId, setSelectedId] = useState(
     defaultSelectedId ?? items[0]?.id,
@@ -60,8 +59,8 @@ const Tabs = ({ label, items, defaultSelectedId }: TabsProps) => {
   };
 
   return (
-    <div className={styles.tabs}>
-      <div role="tablist" aria-label={label} className={styles.list}>
+    <div className={styles?.tabs}>
+      <div role="tablist" aria-label={label} className={styles?.tablist}>
         {items.map((item, index) => {
           const selected = item.id === selectedId;
           return (
@@ -77,7 +76,7 @@ const Tabs = ({ label, items, defaultSelectedId }: TabsProps) => {
               aria-selected={selected}
               aria-controls={`${baseId}-panel-${item.id}`}
               tabIndex={selected ? 0 : -1}
-              className={`button ${styles.tab}`}
+              className={`button ${styles?.tab}`}
               onClick={() => setSelectedId(item.id)}
               onKeyDown={(event) => onKeyDown(event, index)}
             >
@@ -94,7 +93,7 @@ const Tabs = ({ label, items, defaultSelectedId }: TabsProps) => {
           aria-labelledby={`${baseId}-tab-${item.id}`}
           tabIndex={0}
           hidden={item.id !== selectedId}
-          className={styles.panel}
+          className={styles?.panel}
         >
           {item.content}
         </div>
