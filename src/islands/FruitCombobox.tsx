@@ -1,6 +1,5 @@
 import { useState } from "react";
-import Combobox from "./Combobox";
-
+import Combobox from "../components/Combobox";
 import styles from "./FruitCombobox.module.css";
 
 const FRUITS = [

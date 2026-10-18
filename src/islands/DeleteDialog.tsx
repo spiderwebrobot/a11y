@@ -1,7 +1,6 @@
 import { useState } from "react";
-import Dialog from "./Dialog";
-
-import styles from "./Dialog.module.css";
+import Dialog from "../components/Dialog";
+import styles from "./DeleteDialog.module.css";
 
 /**
  * Builds the tab items client-side so JSX content doesn't have to be

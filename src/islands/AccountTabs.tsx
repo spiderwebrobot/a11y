@@ -1,10 +1,10 @@
-import Tabs, { type TabItem } from "./Tabs";
-import styles from "./Tabs.module.css";
+import Tabs, { type TabItem } from "../components/Tabs";
+import styles from "./AccountTabs.module.css";
 
 const items: TabItem[] = [
-  { id: "profile", label: "Profile", content: <p>A profile view</p> },
-  { id: "security", label: "Security", content: <p>Security settings</p> },
-  { id: "billing", label: "Billing", content: <p>Billing information</p> },
+  { id: "profile", label: "Profile", content: <p>A profile in excellence.</p> },
+  { id: "security", label: "Security", content: <p>Security settings.</p> },
+  { id: "billing", label: "Billing", content: <p>Billing information.</p> },
 ];
 
 /**
