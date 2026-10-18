@@ -1,3 +1,7 @@
+@layer reset, utilities;
+
+@import "normalize.css" layer(reset);
+
 :root {
   --bumper: 1.5rem; /* 24 pixels */
   --fg: #1a1a1a;
@@ -27,44 +31,41 @@
   }
 }
 
-.container {
-  margin: 0 auto;
-  max-width: var(--max-width);
-}
+@layer utilities {
+  .container {
+    margin: 0 auto;
+    max-width: var(--max-width);
+  }
 
-.inline-bumper {
-  padding-inline: var(--bumper);
-}
+  .inline-bumper {
+    padding-inline: var(--bumper);
+  }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-  border: 0;
-}
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
 
-button {
-  font: inherit;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--surface);
-  color: var(--fg);
-  cursor: pointer;
-}
+  .button {
+    font: inherit;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--fg);
+    cursor: pointer;
+  }
 
-button.danger {
-  background: var(--danger);
-  border-color: var(--danger);
-  color: var(--bg);
+  .button.danger {
+    background: var(--danger);
+    border-color: var(--danger);
+    color: var(--bg);
+  }
 }
-
-/* :focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 2px;
-} */

@@ -72,7 +72,7 @@ const Dialog = ({
         {children}
         <button
           type="button"
-          className={styles?.close}
+          className={`button ${styles?.close}`}
           aria-label="Close"
           onClick={onClose}
         >

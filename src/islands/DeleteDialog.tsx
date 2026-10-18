@@ -1,7 +1,6 @@
 import { useState } from "react";
-import Dialog from "./Dialog";
-
-import styles from "./Dialog.module.css";
+import Dialog from "../components/Dialog";
+import styles from "./DeleteDialog.module.css";
 
 /**
  * Builds the tab items client-side so JSX content doesn't have to be
@@ -15,7 +14,11 @@ const DeleteDialog = () => {
         <h2 id="dialog-heading">Dialog</h2>
       </header>
       <div className="container">
-        <button type="button" onClick={() => setDialogOpen(true)}>
+        <button
+          className="button"
+          type="button"
+          onClick={() => setDialogOpen(true)}
+        >
           Delete project
         </button>
         <Dialog
@@ -26,12 +29,16 @@ const DeleteDialog = () => {
           styles={styles}
         >
           <div className={styles.actions}>
-            <button type="button" onClick={() => setDialogOpen(false)}>
+            <button
+              className="button"
+              type="button"
+              onClick={() => setDialogOpen(false)}
+            >
               Cancel
             </button>
             <button
+              className="button danger"
               type="button"
-              className="danger"
               onClick={() => setDialogOpen(false)}
             >
               Delete
