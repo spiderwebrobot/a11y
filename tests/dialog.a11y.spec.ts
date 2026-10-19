@@ -46,6 +46,30 @@ test("has an accessible description", async ({ page }) => {
   );
 });
 
+test("makes the page behind the dialog inert", async ({ page }) => {
+  await trigger(page).click();
+  await expect(dialog(page)).toBeVisible();
+
+  // Inert controls can't take focus, even programmatically.
+  await page.getByRole("combobox").evaluate((el) => (el as HTMLElement).focus());
+  await page.getByRole("tab").first().evaluate((el) => (el as HTMLElement).focus());
+  await expect(dialog(page).locator(":focus")).toHaveCount(1);
+  await expect(page.getByRole("combobox")).not.toBeFocused();
+  await expect(page.getByRole("tab").first()).not.toBeFocused();
+
+  // Tab never lands on the page behind the dialog. It may leave the document for
+  // the browser UI, in which case nothing in the page has focus.
+  const focusables = await dialog(page).getByRole("button").count();
+  for (let i = 0; i < focusables + 2; i++) {
+    await page.keyboard.press("Tab");
+    const behindDialog = await page.evaluate(() => {
+      const active = document.activeElement;
+      return active !== document.body && !active?.closest("dialog");
+    });
+    expect(behindDialog).toBe(false);
+  }
+});
+
 test("closes on Escape and returns focus to the trigger", async ({ page }) => {
   await trigger(page).click();
   await expect(dialog(page)).toBeVisible();

@@ -9,7 +9,20 @@ export default defineConfig({
     baseURL: "http://localhost:4321",
     trace: "on-first-retry",
   },
-  projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"], channel: "chrome" } }],
+  projects: [
+    {
+      name: "chromium",
+      use: { ...devices["Desktop Chrome"], channel: "chrome" },
+    },
+    {
+      name: "chromium-dark",
+      use: {
+        ...devices["Desktop Chrome"],
+        channel: "chrome",
+        colorScheme: "dark",
+      },
+    },
+  ],
   webServer: {
     // Agent env vars (AI_AGENT, CLAUDECODE) make `astro dev` detach into the background, which Playwright reads as an early exit.
     command: "env -u AI_AGENT -u CLAUDECODE npm run dev -- --port 4321",
