@@ -19,6 +19,7 @@
   "dependencies": {
     "@astrojs/cloudflare": "^14.3.4",
     "@astrojs/react": "^7.1.0",
+    "@primer/octicons-react": "^19.41.0",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "astro": "^7.3.8",
