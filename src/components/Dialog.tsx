@@ -1,4 +1,5 @@
 import { useEffect, useId, useRef, type ReactNode } from "react";
+import { XIcon } from "@primer/octicons-react";
 
 interface DialogProps {
   open: boolean;
@@ -76,7 +77,7 @@ const Dialog = ({
           aria-label="Close"
           onClick={onClose}
         >
-          ×
+          <XIcon size={24} />
         </button>
       </div>
     </dialog>

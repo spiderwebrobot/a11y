@@ -2,13 +2,13 @@
 
 Three React + TypeScript components built to the [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/), in an Astro app, with WCAG 2.2 AA checks and keyboard behavior enforced in CI by Playwright and axe-core.
 
-| Component  | Pattern                                                                                                                   | Notable decisions                                                                                                                        |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `Tabs`     | [Tabs, automatic activation](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/)                                              | Roving `tabindex`; Left/Right (wrapping), Home/End; focusable panel                                                                      |
-| `Dialog`   | [Modal dialog](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)                                                    | Native `<dialog>` + `showModal()` for inertness and top layer instead of a hand-rolled focus trap; focus restored to the trigger         |
-| `Combobox` | [Combobox with list autocomplete](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-autocomplete-list/) | DOM focus stays in the input; `aria-activedescendant` tracks the active option; a `role="status"` live region announces the result count |
+| Component  | Pattern                                                                                                              | Notable decisions                                                                                                                        |
+| ---------- | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `Tabs`     | [Tabs, automatic activation](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/)                                         | Roving `tabindex`; Left/Right (wrapping), Home/End; focusable panel                                                                      |
+| `Dialog`   | [Modal dialog](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)                                               | Native `<dialog>` + `showModal()` for inertness and top layer instead of a hand-rolled focus trap; focus restored to the trigger         |
+| `Combobox` | [Combobox with autocomplete](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-autocomplete-list/) | DOM focus stays in the input; `aria-activedescendant` tracks the active option; a `role="status"` live region announces the result count |
 
-The components live in `src/components/`. `src/islands/` wraps each one with the demo content and CSS modules, and `src/pages/index.astro` renders all three.
+The components live in `src/components/`. Demo content and CSS modules live in `src/islands/`, and `src/pages/index.astro` renders all three demos.
 
 ## Run it
 
