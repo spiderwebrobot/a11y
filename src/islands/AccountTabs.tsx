@@ -2,9 +2,17 @@ import Tabs, { type TabItem } from "../components/Tabs";
 import styles from "./AccountTabs.module.css";
 
 const items: TabItem[] = [
-  { id: "profile", label: "Profile", content: <p>A profile in excellence.</p> },
-  { id: "security", label: "Security", content: <p>Security settings.</p> },
-  { id: "billing", label: "Billing", content: <p>Billing information.</p> },
+  { id: "profile", label: "Profile", content: <p>Name, photo and bio.</p> },
+  {
+    id: "security",
+    label: "Security",
+    content: <p>Password and two-factor authentication.</p>,
+  },
+  {
+    id: "billing",
+    label: "Billing",
+    content: <p>Payment methods and invoices.</p>,
+  },
 ];
 
 /**
